@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Ozine || Blog
 subtitle: ''
-description: ''
+description: 人活着就是为了千反田
 keywords:
 author: Ozine
 language: zh-CN
@@ -103,5 +103,22 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Ozine233/Ozine233.github.io.git
+  repo: git@github.com:Ozine233/Ozine233.github.io.git
   branch: main
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  log: false
+  model:
+    use: live2d-widget-model-miku
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true

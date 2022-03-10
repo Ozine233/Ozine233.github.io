@@ -8,4 +8,12 @@
 
 <h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
   </entry>
+  <entry>
+    <title>Cmake下跨平台支持方式</title>
+    <url>/2022/03/10/cmake/</url>
+    <content><![CDATA[<p>Cmake一大优势是对跨平台的广泛支持，但是在实现应用过程中，一些API在不同的平台有不同的接口，以及需要调用不一样的系统函数，此时可以用Cmake添加当前系统的宏定义，来判断编译时使用哪一部分代码！</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
 </search>

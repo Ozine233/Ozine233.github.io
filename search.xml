@@ -10,7 +10,7 @@
   </entry>
   <entry>
     <title>Cmake下跨平台支持方式</title>
-    <url>/2022/03/10/cmake/</url>
+    <url>/2022/03/10/Cmake%E4%B8%8B%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<p>Cmake一大优势是对跨平台的广泛支持，但是在实现应用过程中，一些API在不同的平台有不同的接口，以及需要调用不一样的系统函数，此时可以用Cmake添加当前系统的宏定义，来判断编译时使用哪一部分代码！</p>
 <span id="more"></span>
 
@@ -19,6 +19,23 @@
 
 <p>在外部 cmakelist.txt 中添加</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment">#---------------------------------------------------#</span></span><br><span class="line"><span class="comment">#                    OS</span></span><br><span class="line"><span class="comment">#---------------------------------------------------#</span></span><br><span class="line"><span class="keyword">if</span>( APPLE )</span><br><span class="line">    <span class="keyword">option</span>( OS_MACOSX_ <span class="string">&quot; MACOSX &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line">    <span class="keyword">option</span>( OS_UNIX_ <span class="string">&quot; UNIX &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line">    <span class="keyword">message</span>( STATUS <span class="string">&quot;___APPLE___&quot;</span> )</span><br><span class="line"></span><br><span class="line"><span class="keyword">elseif</span>( UNIX <span class="keyword">AND</span> <span class="keyword">NOT</span> APPLE )</span><br><span class="line">    <span class="keyword">option</span>( OS_LINUX_ <span class="string">&quot; LINUX &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line">    <span class="keyword">option</span>( OS_UNIX_ <span class="string">&quot; UNIX &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line">    <span class="keyword">message</span>( STATUS <span class="string">&quot;___UNIX___&quot;</span> )</span><br><span class="line"></span><br><span class="line"><span class="comment">#-- 当使用 Virsual Studio 编译 cmake项目时，可用 WIN32</span></span><br><span class="line"><span class="comment">#   如果出错，尝试改用 MSVC</span></span><br><span class="line"><span class="keyword">elseif</span>( WIN32 )</span><br><span class="line">    <span class="keyword">option</span>( OS_WIN32_ <span class="string">&quot; WIN32 &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line">    <span class="keyword">message</span>( STATUS <span class="string">&quot;___WIN32___&quot;</span> )</span><br><span class="line"></span><br><span class="line"><span class="keyword">endif</span>( APPLE )</span><br><span class="line"><span class="comment">#---- Must before project!!! ----</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#---------------------------------------------------#</span></span><br><span class="line"><span class="comment">#                 SySconfig</span></span><br><span class="line"><span class="comment">#---------------------------------------------------#</span></span><br><span class="line"><span class="comment">#-- 配置 一个 h文件，用来 从 cmake 传递一些 变量 到 源文件 中。</span></span><br><span class="line"><span class="comment">#-- 我们需要手动编写 .h.in 文件。</span></span><br><span class="line"><span class="comment">#-- 然后，cmake调用会 帮我们自动生成对应的 h文件。</span></span><br><span class="line"><span class="comment">#-- 最后，正式 make编译时。源文件 就能 include 这些生成的 h文件。</span></span><br><span class="line"><span class="keyword">option</span>( SWITCH_1</span><br><span class="line">    <span class="string">&quot; option test: switch 1 &quot;</span> <span class="keyword">ON</span> )</span><br><span class="line"><span class="keyword">configure_file</span>(</span><br><span class="line">    <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;SysConfig.h.in&quot;</span></span><br><span class="line">    <span class="string">&quot;$&#123;EXECUTABLE_OUTPUT_PATH&#125;SysConfig.h&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>现代c++学习日记1</title>
+    <url>/2022/03/11/%E7%8E%B0%E4%BB%A3cpp%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<p>auto&amp;&amp; 与 auto&amp; 都用于获取引用</p>
+<p>但是一般用auto&amp;&amp;</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>live</title>
+    <url>/2022/03/30/live/</url>
+    <content><![CDATA[<p>“Don’t stand still, move forward.” Really needed that, thank you Mike.</p>
+<span id="more"></span>
 
 ]]></content>
   </entry>
